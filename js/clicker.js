@@ -56,6 +56,11 @@ let achievements = [
         requiredClicks: 10000,
         acquired: false,
     },
+    {
+        description: 'Tac-2 god!',
+        requiredClicks: 1000000,
+        acquired: false,
+    },
 ];
 
 /* Med ett valt element, som knappen i detta fall så kan vi skapa listeners
@@ -163,24 +168,29 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Sop',
+        name: 'Pipifågel',
         cost: 10,
         amount: 1,
     },
     {
-        name: 'Kvalitetsspade',
+        name: 'Kråka',
         cost: 50,
         clicks: 2,
     },
     {
-        name: 'Skottkärra',
+        name: 'Pelikan',
         cost: 100,
         amount: 10,
     },
     {
-        name: 'Grävmaskin',
+        name: 'Talgoxe',
         cost: 1000,
         amount: 100,
+    },
+    {
+        name: 'Örn',
+        cost: 100000,
+        amount: 100000,
     },
 ];
 
@@ -213,7 +223,7 @@ function createCard(upgrade) {
     } else {
         header.textContent = `${upgrade.name}, +${upgrade.clicks} per klick.`;
     }
-    cost.textContent = `Köp för ${upgrade.cost} benbitar.`;
+    cost.textContent = `Köp för ${upgrade.cost} Fåglar.`;
 
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
